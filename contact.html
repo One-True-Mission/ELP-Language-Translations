@@ -23,21 +23,23 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><button class="lang-toggle" type="button">EN / ES</button></li>
+        <li><a href="index.html" data-lang-en="Home" data-lang-es="Inicio">Home</a></li>
+        <li><a href="about.html" data-lang-en="About" data-lang-es="Nosotros">About</a></li>
+        <li><a href="services.html" data-lang-en="Services" data-lang-es="Servicios">Services</a></li>
+        <li><a href="contact.html" data-lang-en="Contact" data-lang-es="Contacto">Contact</a></li>
       </ul>
     </div>
   </nav>
 
+  <!-- Floating language toggle (sticky bottom-right) -->
+  <button class="lang-toggle" type="button">EN / ES</button>
+
   <!-- ===== Page Header ===== -->
   <header class="page-header">
     <div class="page-header-inner">
-      <span class="page-header-tagline">Contáctenos</span>
-      <h1>Let's <em>talk.</em></h1>
-      <p>Send us a message, give us a call, or book a meeting directly. We typically respond within one business day.</p>
+      <span class="page-header-tagline" data-lang-en="Contáctenos" data-lang-es="Contáctenos">Contáctenos</span>
+      <h1 data-lang-en="Let's <em>talk.</em>" data-lang-es="<em>Hablemos.</em>">Let's <em>talk.</em></h1>
+      <p data-lang-en="Send us a message, give us a call, or book a meeting directly. We typically respond within one business day." data-lang-es="Envíenos un mensaje, llámenos, o reserve una cita directamente. Normalmente respondemos dentro de un día hábil.">Send us a message, give us a call, or book a meeting directly. We typically respond within one business day.</p>
     </div>
   </header>
 
@@ -47,9 +49,9 @@
       <div class="contact-layout">
 
         <div class="contact-info">
-          <p class="section-eyebrow">Get In Touch</p>
-          <h2>We'd love to <em class="serif-accent">hear</em> from you.</h2>
-          <p>
+          <p class="section-eyebrow" data-lang-en="Get In Touch" data-lang-es="Póngase en Contacto">Get In Touch</p>
+          <h2 data-lang-en="We'd love to <em class=&quot;serif-accent&quot;>hear</em> from you." data-lang-es="Nos encantaría <em class=&quot;serif-accent&quot;>saber</em> de usted.">We'd love to <em class="serif-accent">hear</em> from you.</h2>
+          <p data-lang-en="Tell us about your project, your language goals, or your questions. Our inquiry-based approach starts here, with a real conversation about what you actually need." data-lang-es="Cuéntenos sobre su proyecto, sus metas lingüísticas o sus preguntas. Nuestro enfoque basado en preguntas comienza aquí, con una conversación real sobre lo que usted realmente necesita.">
             Tell us about your project, your language goals, or your questions. Our inquiry-based approach
             starts here, with a real conversation about what you actually need.
           </p>
@@ -59,7 +61,7 @@
               <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
             <div>
-              <div class="contact-detail-label">Phone</div>
+              <div class="contact-detail-label" data-lang-en="Phone" data-lang-es="Teléfono">Phone</div>
               <a href="tel:7138243384" class="contact-detail-value">713-824-3384</a>
             </div>
           </div>
@@ -69,8 +71,8 @@
               <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div>
-              <div class="contact-detail-label">Service Area</div>
-              <div class="contact-detail-value">In-person Texas, remote nationwide</div>
+              <div class="contact-detail-label" data-lang-en="Service Area" data-lang-es="Área de Servicio">Service Area</div>
+              <div class="contact-detail-value" data-lang-en="In-person Texas, remote nationwide" data-lang-es="En persona en Texas, a distancia a nivel nacional">In-person Texas, remote nationwide</div>
             </div>
           </div>
 
@@ -79,48 +81,48 @@
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
             <div>
-              <div class="contact-detail-label">Response Time</div>
-              <div class="contact-detail-value">Within one business day</div>
+              <div class="contact-detail-label" data-lang-en="Response Time" data-lang-es="Tiempo de Respuesta">Response Time</div>
+              <div class="contact-detail-value" data-lang-en="Within one business day" data-lang-es="Dentro de un día hábil">Within one business day</div>
             </div>
           </div>
 
         </div>
 
         <div class="contact-form-wrap">
-          <h2>Send a <em class="serif-accent">message.</em></h2>
-          <p style="margin-bottom: 1.5rem;">All fields required.</p>
+          <h2 data-lang-en="Send a <em class=&quot;serif-accent&quot;>message.</em>" data-lang-es="Envíe un <em class=&quot;serif-accent&quot;>mensaje.</em>">Send a <em class="serif-accent">message.</em></h2>
+          <p style="margin-bottom: 1.5rem;" data-lang-en="All fields required." data-lang-es="Todos los campos son obligatorios.">All fields required.</p>
           <!-- TODO: Update Formspree endpoint when business email is confirmed -->
           <form id="contact-form" action="https://formspree.io/f/xnjozbnj" method="POST">
             <div class="form-field">
-              <label for="name">Your Name</label>
+              <label for="name" data-lang-en="Your Name" data-lang-es="Su Nombre">Your Name</label>
               <input type="text" id="name" name="name" required />
             </div>
             <div class="form-field">
-              <label for="email">Email Address</label>
+              <label for="email" data-lang-en="Email Address" data-lang-es="Correo Electrónico">Email Address</label>
               <input type="email" id="email" name="email" required />
             </div>
             <div class="form-field">
-              <label for="phone">Phone (optional)</label>
+              <label for="phone" data-lang-en="Phone (optional)" data-lang-es="Teléfono (opcional)">Phone (optional)</label>
               <input type="tel" id="phone" name="phone" />
             </div>
             <div class="form-field">
-              <label for="service">What do you need?</label>
+              <label for="service" data-lang-en="What do you need?" data-lang-es="¿Qué necesita?">What do you need?</label>
               <select id="service" name="service" required>
-                <option value="">Select a service...</option>
-                <option value="Language Assessment">Informal Language Assessment</option>
-                <option value="Language Learning Class">Language Learning Class</option>
-                <option value="Interpretation">Language Interpretation</option>
-                <option value="Equipment Rental">Interpretation Equipment Rental</option>
-                <option value="Homeschool Support">Homeschool Support Services</option>
-                <option value="Custom Project Quote">Custom Project Quote</option>
-                <option value="Just a question">Just have a question</option>
+                <option value="" data-lang-en="Select a service..." data-lang-es="Seleccione un servicio...">Select a service...</option>
+                <option value="Language Assessment" data-lang-en="Informal Language Assessment" data-lang-es="Evaluación Informal de Idioma">Informal Language Assessment</option>
+                <option value="Language Learning Class" data-lang-en="Language Learning Class" data-lang-es="Clases de Aprendizaje de Idiomas">Language Learning Class</option>
+                <option value="Interpretation" data-lang-en="Language Interpretation" data-lang-es="Interpretación de Idiomas">Language Interpretation</option>
+                <option value="Equipment Rental" data-lang-en="Interpretation Equipment Rental" data-lang-es="Renta de Equipo de Interpretación">Interpretation Equipment Rental</option>
+                <option value="Homeschool Support" data-lang-en="Homeschool Support Services" data-lang-es="Servicios de Apoyo para Educación en Casa">Homeschool Support Services</option>
+                <option value="Custom Project Quote" data-lang-en="Custom Project Quote" data-lang-es="Cotización Personalizada">Custom Project Quote</option>
+                <option value="Just a question" data-lang-en="Just have a question" data-lang-es="Solo tengo una pregunta">Just have a question</option>
               </select>
             </div>
             <div class="form-field">
-              <label for="message">Tell us about your project</label>
+              <label for="message" data-lang-en="Tell us about your project" data-lang-es="Cuéntenos sobre su proyecto">Tell us about your project</label>
               <textarea id="message" name="message" required></textarea>
             </div>
-            <button type="submit" class="btn-submit">Send Message</button>
+            <button type="submit" class="btn-submit" data-lang-en="Send Message" data-lang-es="Enviar Mensaje">Send Message</button>
           </form>
         </div>
 
@@ -132,10 +134,10 @@
   <section class="section" id="schedule">
     <div class="section-frame section-frame--sandstone schedule-section">
       <div style="text-align: center;">
-        <p class="section-eyebrow">Book Directly</p>
-        <h2>Schedule a meeting <em class="serif-accent">by service.</em></h2>
+        <p class="section-eyebrow" data-lang-en="Book Directly" data-lang-es="Reserve Directamente">Book Directly</p>
+        <h2 data-lang-en="Schedule a meeting <em class=&quot;serif-accent&quot;>by service.</em>" data-lang-es="Agende una cita <em class=&quot;serif-accent&quot;>por servicio.</em>">Schedule a meeting <em class="serif-accent">by service.</em></h2>
         <div class="section-intro center">
-          <p>
+          <p data-lang-en="Skip the back-and-forth. Pick the service you're interested in and book a time that works for you on our calendar." data-lang-es="Sin idas y vueltas. Elija el servicio que le interesa y reserve un horario que le funcione en nuestro calendario.">
             Skip the back-and-forth. Pick the service you're interested in and book a time that
             works for you on our calendar.
           </p>
@@ -149,8 +151,8 @@
             <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           </div>
           <div class="schedule-btn-label">
-            <span class="schedule-btn-title">Informal Language Assessment</span>
-            <span class="schedule-btn-sub">Approx. 30 minutes</span>
+            <span class="schedule-btn-title" data-lang-en="Informal Language Assessment" data-lang-es="Evaluación Informal de Idioma">Informal Language Assessment</span>
+            <span class="schedule-btn-sub" data-lang-en="Approx. 30 minutes" data-lang-es="Aprox. 30 minutos">Approx. 30 minutes</span>
           </div>
         </a>
 
@@ -159,8 +161,8 @@
             <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
           </div>
           <div class="schedule-btn-label">
-            <span class="schedule-btn-title">Language Learning Class</span>
-            <span class="schedule-btn-sub">Discovery & scheduling call</span>
+            <span class="schedule-btn-title" data-lang-en="Language Learning Class" data-lang-es="Clases de Aprendizaje">Language Learning Class</span>
+            <span class="schedule-btn-sub" data-lang-en="Discovery & scheduling call" data-lang-es="Llamada de descubrimiento y agenda">Discovery & scheduling call</span>
           </div>
         </a>
 
@@ -169,8 +171,8 @@
             <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"/></svg>
           </div>
           <div class="schedule-btn-label">
-            <span class="schedule-btn-title">Language Interpretation</span>
-            <span class="schedule-btn-sub">Remote or in-person</span>
+            <span class="schedule-btn-title" data-lang-en="Language Interpretation" data-lang-es="Interpretación de Idiomas">Language Interpretation</span>
+            <span class="schedule-btn-sub" data-lang-en="Remote or in-person" data-lang-es="A distancia o en persona">Remote or in-person</span>
           </div>
         </a>
 
@@ -179,8 +181,8 @@
             <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
           </div>
           <div class="schedule-btn-label">
-            <span class="schedule-btn-title">Equipment Rental Meeting</span>
-            <span class="schedule-btn-sub">Discuss event needs</span>
+            <span class="schedule-btn-title" data-lang-en="Equipment Rental Meeting" data-lang-es="Reunión de Renta de Equipo">Equipment Rental Meeting</span>
+            <span class="schedule-btn-sub" data-lang-en="Discuss event needs" data-lang-es="Hablar sobre las necesidades del evento">Discuss event needs</span>
           </div>
         </a>
 
@@ -189,8 +191,8 @@
             <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           </div>
           <div class="schedule-btn-label">
-            <span class="schedule-btn-title">Homeschool Support</span>
-            <span class="schedule-btn-sub">Family planning meeting</span>
+            <span class="schedule-btn-title" data-lang-en="Homeschool Support" data-lang-es="Apoyo de Educación en Casa">Homeschool Support</span>
+            <span class="schedule-btn-sub" data-lang-en="Family planning meeting" data-lang-es="Reunión de planificación familiar">Family planning meeting</span>
           </div>
         </a>
 
@@ -199,14 +201,14 @@
             <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
           </div>
           <div class="schedule-btn-label">
-            <span class="schedule-btn-title">Custom Project Quote</span>
-            <span class="schedule-btn-sub">Describe your project</span>
+            <span class="schedule-btn-title" data-lang-en="Custom Project Quote" data-lang-es="Cotización Personalizada">Custom Project Quote</span>
+            <span class="schedule-btn-sub" data-lang-en="Describe your project" data-lang-es="Describa su proyecto">Describe your project</span>
           </div>
         </a>
 
       </div>
 
-      <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #6b7691;">
+      <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #6b7691;" data-lang-en="These buttons will link directly to your six Google Calendar appointment types once they're set up." data-lang-es="Estos botones se conectarán directamente a sus seis tipos de citas de Google Calendar una vez que estén configurados.">
         These buttons will link directly to your six Google Calendar appointment types once they're set up.
       </p>
     </div>
@@ -218,32 +220,32 @@
       <div>
         <p class="footer-brand">ELP Language Translation Services LLC</p>
         <p class="footer-tagline">El mundo en sus manos</p>
-        <p class="footer-text">
+        <p class="footer-text" data-lang-en="Small business, big language connections. Spanish, English, Portuguese, and ASL. In-person Texas, remote nationwide." data-lang-es="Pequeño negocio, grandes conexiones de idioma. Español, inglés, portugués y ASL. En persona en Texas, a distancia a nivel nacional.">
           Small business, big language connections. Spanish, English, Portuguese, and ASL.
           In-person Texas, remote nationwide.
         </p>
       </div>
       <div>
-        <h4>Navigation</h4>
+        <h4 data-lang-en="Navigation" data-lang-es="Navegación">Navigation</h4>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" data-lang-en="Home" data-lang-es="Inicio">Home</a></li>
+          <li><a href="about.html" data-lang-en="About" data-lang-es="Nosotros">About</a></li>
+          <li><a href="services.html" data-lang-en="Services" data-lang-es="Servicios">Services</a></li>
+          <li><a href="contact.html" data-lang-en="Contact" data-lang-es="Contacto">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h4>Contact</h4>
+        <h4 data-lang-en="Contact" data-lang-es="Contacto">Contact</h4>
         <ul>
           <li><a href="tel:7138243384">713-824-3384</a></li>
-          <li><a href="contact.html">Send a Message</a></li>
-          <li><a href="contact.html#schedule">Book a Service</a></li>
+          <li><a href="contact.html" data-lang-en="Send a Message" data-lang-es="Enviar un Mensaje">Send a Message</a></li>
+          <li><a href="contact.html#schedule" data-lang-en="Book a Service" data-lang-es="Reservar un Servicio">Book a Service</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 ELP Language Translation Services LLC. All rights reserved.</p>
-      <p>Site by <a href="https://otm-designs.com" target="_blank" rel="noopener">OTM Web Design</a></p>
+      <p data-lang-en="&copy; 2026 ELP Language Translation Services LLC. All rights reserved." data-lang-es="&copy; 2026 ELP Language Translation Services LLC. Todos los derechos reservados.">&copy; 2026 ELP Language Translation Services LLC. All rights reserved.</p>
+      <p data-lang-en="Site by <a href=&quot;https://otm-designs.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>OTM Web Design</a>" data-lang-es="Sitio creado por <a href=&quot;https://otm-designs.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;>OTM Web Design</a>">Site by <a href="https://otm-designs.com" target="_blank" rel="noopener">OTM Web Design</a></p>
     </div>
   </footer>
 

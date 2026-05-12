@@ -1,9 +1,61 @@
 /* =========================================================
    ELP Language Translation Services
-   Site scripts
+   Site scripts with bilingual EN/ES toggle
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* ---------- Bilingual Toggle ---------- */
+  const STORAGE_KEY = 'elp-lang';
+  const langToggle = document.querySelector('.lang-toggle');
+  let currentLang = 'en';
+
+  const applyLanguage = (lang) => {
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('[data-lang-en]').forEach(el => {
+      const enText = el.getAttribute('data-lang-en');
+      const esText = el.getAttribute('data-lang-es');
+      if (lang === 'es' && esText) {
+        el.innerHTML = esText;
+      } else {
+        el.innerHTML = enText;
+      }
+    });
+
+    document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+      const enText = el.getAttribute('data-placeholder-en');
+      const esText = el.getAttribute('data-placeholder-es');
+      el.placeholder = (lang === 'es' && esText) ? esText : enText;
+    });
+
+    if (langToggle) {
+      if (lang === 'es') {
+        // Currently showing Spanish, so button offers English translation
+        langToggle.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.4rem; vertical-align: middle;"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg>Translate';
+        langToggle.setAttribute('aria-label', 'Translate to English');
+      } else {
+        // Currently showing English, so button offers Spanish translation
+        langToggle.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.4rem; vertical-align: middle;"><path d="M5 8l6 6"/><path d="M4 14l6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="M22 22l-5-10-5 10"/><path d="M14 18h6"/></svg>Traducir';
+        langToggle.setAttribute('aria-label', 'Traducir al español');
+      }
+    }
+
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+  };
+
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved === 'es' || saved === 'en') currentLang = saved;
+  } catch (e) {}
+  applyLanguage(currentLang);
+
+  if (langToggle) {
+    langToggle.addEventListener('click', () => {
+      currentLang = (currentLang === 'en') ? 'es' : 'en';
+      applyLanguage(currentLang);
+    });
+  }
 
   /* ---------- Mobile nav toggle ---------- */
   const navToggle = document.querySelector('.nav-toggle');
@@ -13,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
-
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('active');
@@ -30,21 +81,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ---------- Language toggle placeholder ---------- */
-  const langToggle = document.querySelector('.lang-toggle');
-  if (langToggle) {
-    langToggle.addEventListener('click', () => {
-      alert('Spanish version coming soon. This toggle will switch the entire site between English and Spanish, just like the toggle on otm-designs.com.');
-    });
-  }
-
   /* ---------- Schedule button placeholder ---------- */
   document.querySelectorAll('.schedule-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       if (btn.getAttribute('href') === '#') {
         e.preventDefault();
         const service = btn.querySelector('.schedule-btn-title')?.textContent || 'this service';
-        alert(`Booking link for "${service}" will go here. Once you set up your six appointment types in Google Calendar, send me the links and I'll wire them up.`);
+        const msg = (currentLang === 'es')
+          ? `El enlace de reservación para "${service}" se agregará aquí. Una vez que configure sus seis tipos de citas en Google Calendar, envíeme los enlaces y los conectaré.`
+          : `Booking link for "${service}" will go here. Once you set up your six appointment types in Google Calendar, send me the links and I'll wire them up.`;
+        alert(msg);
       }
     });
   });
@@ -56,10 +102,14 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       const formData = new FormData(contactForm);
       const submitBtn = contactForm.querySelector('.btn-submit');
-      const originalText = submitBtn.textContent;
+      const originalHTML = submitBtn.innerHTML;
+
+      const sendingText = (currentLang === 'es') ? 'Enviando...' : 'Sending...';
+      const successText = (currentLang === 'es') ? '¡Mensaje enviado!' : 'Message sent!';
+      const errorText = (currentLang === 'es') ? 'Error. Intente de nuevo.' : 'Error. Try again.';
 
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
+      submitBtn.textContent = sendingText;
 
       try {
         const response = await fetch(contactForm.action, {
@@ -69,20 +119,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (response.ok) {
-          submitBtn.textContent = 'Message sent!';
+          submitBtn.textContent = successText;
           contactForm.reset();
           setTimeout(() => {
             submitBtn.disabled = false;
-            submitBtn.textContent = originalText;
+            submitBtn.innerHTML = originalHTML;
           }, 3000);
         } else {
           throw new Error('Form submission failed');
         }
       } catch (error) {
-        submitBtn.textContent = 'Error. Try again.';
+        submitBtn.textContent = errorText;
         setTimeout(() => {
           submitBtn.disabled = false;
-          submitBtn.textContent = originalText;
+          submitBtn.innerHTML = originalHTML;
         }, 3000);
       }
     });
