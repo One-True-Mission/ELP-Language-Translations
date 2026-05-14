@@ -850,6 +850,20 @@ a:hover {
   margin-top: 3rem;
 }
 
+/* Homepage preview: locked to 2 columns for balance */
+.services-grid--preview {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 700px) {
+  .services-grid--preview {
+    grid-template-columns: 1fr;
+  }
+}
+
 .service-card {
   background: #faf6ee;
   border-radius: 10px;
@@ -1046,7 +1060,67 @@ a:hover {
   margin: 0 auto;
 }
 
-/* ---------- Homeschool Spotlight ---------- */
+/* ---------- Approved Vendor Programs ---------- */
+.vendor-programs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.vendor-program-card {
+  background: rgba(250, 246, 238, 0.95);
+  border: 1.5px solid rgba(201, 169, 97, 0.4);
+  border-radius: 12px;
+  padding: 2.25rem 2rem;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.vendor-program-card:hover {
+  border-color: rgba(201, 169, 97, 0.7);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+.vendor-program-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #C9A961;
+  background: rgba(201, 169, 97, 0.12);
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+
+.vendor-program-card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #0F2A47;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.vendor-program-subtitle {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #6b7691;
+  margin-bottom: 1.25rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 800px) {
+  .vendor-programs-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
 .homeschool-callout {
   display: grid;
   grid-template-columns: 1fr 1fr;
