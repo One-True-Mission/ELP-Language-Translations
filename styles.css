@@ -1305,8 +1305,32 @@ a:hover {
 
 .schedule-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Second row of 3 buttons, centered under the row of 4 */
+.schedule-grid--bottom {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 825px;
+  margin: 1rem auto 0;
+}
+
+@media (max-width: 1100px) {
+  .schedule-grid,
+  .schedule-grid--bottom {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 500px) {
+  .schedule-grid,
+  .schedule-grid--bottom {
+    grid-template-columns: 1fr;
+  }
 }
 
 .schedule-btn {
